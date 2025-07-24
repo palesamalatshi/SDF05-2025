@@ -1,65 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Footer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-white text-[#333738]">
-    <footer class="bg-[#659f8f] text-[#333738]">
-      <div class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Subscribe Section -->
-          <div>
-            <h2 class="text-xl font-semibold mb-4">Subscribe to our newsletter for updates.</h2>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="w-full sm:w-auto flex-grow px-4 py-2 bg-white text-[#333738] rounded-md focus:outline-none"
-              />
-              <button
-                class="bg-[#d86943] hover:bg-[#b3542f] text-white px-5 py-2 rounded-md transition-colors duration-300"
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Tailwind Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#333738] font-sans">
+  <footer class="bg-[#659f8f] text-[#333738] py-[75px] px-6 md:px-12 lg:px-[130px]">
+    <div class="max-w-[1200px] mx-auto
+      flex flex-col
+      md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-0 md:gap-y-10
+      lg:flex lg:flex-row lg:gap-x-[48px]
+    ">
 
-          <!-- Quick Links -->
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-              <li><a href="#" class="hover:underline">Home</a></li>
-              <li><a href="#" class="hover:underline">Who We Are</a></li>
-              <li><a href="#" class="hover:underline">Our Philosophy</a></li>
-            </ul>
-          </div>
-
-          <!-- Technologies -->
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Technologies</h3>
-            <ul class="space-y-2">
-              <li><a href="#" class="hover:underline">HTML</a></li>
-              <li><a href="#" class="hover:underline">CSS</a></li>
-              <li><a href="#" class="hover:underline">JavaScript</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Divider -->
-        <hr class="my-8 border-[#d86943]" />
-
-        <!-- Logo -->
-        <div class="flex justify-center">
-          <img
-            src="https://codespace-assets.global.ssl.fastly.net/wp/assets/website/codespace-primary-logo-light.svg"
-            alt="CodeSpace Logo"
-            class="h-7"
+      <!-- 1st Child: Newsletter -->
+      <section
+        class="order-1 md:col-start-1 md:row-start-1
+               lg:order-none lg:flex-1 lg:min-w-[250px]"
+      >
+        <h5 class="text-[1.25rem] sm:text-[1.35rem] md:text-[1.25rem] lg:text-[1.5rem] mb-4 font-bold leading-snug">
+          Subscribe to our newsletter for <span class="block sm:inline">updates.</span>
+        </h5>
+        <form
+          class="flex flex-col sm:flex-row gap-3 md:gap-2 lg:gap-[10px] mb-4"
+          action="#"
+          method="post"
+          aria-label="Subscribe to newsletter"
+        >
+          <input
+            type="email"
+            placeholder="Email Address"
+            aria-label="Email Address"
+            required
+            class="w-full sm:max-w-[270px] md:max-w-[300px] lg:max-w-[230px] px-3 py-2 rounded text-sm bg-white text-[#333738] outline-none placeholder:text-gray-500"
           />
-        </div>
-      </div>
-    </footer>
-  </body>
+          <button
+            type="submit"
+            class="w-full sm:max-w-[120px] lg:max-w-[100px] bg-[#d86943] text-white font-bold px-4 py-2 rounded text-sm hover:bg-[#b3542f] transition-colors"
+          >
+            Subscribe
+          </button>
+        </form>
+      </section>
+
+      <!-- 2nd Child: Quick Links -->
+      <section
+        class="order-2 md:col-start-1 md:row-start-2
+               lg:order-none lg:w-[200px]"
+      >
+        <h6 class="text-[1.25rem] mb-4 whitespace-nowrap font-bold">
+          Quick Links
+        </h6>
+        <ul class="space-y-3">
+          <li><a href="#" class="hover:text-[#d86943] transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-[#d86943] transition-colors">Who We Are</a></li>
+          <li><a href="#" class="hover:text-[#d86943] transition-colors">Our Philosophy</a></li>
+        </ul>
+      </section>
+
+      <!-- 3rd Child: Technologies -->
+      <section
+        class="order-3 md:col-start-2 md:row-start-2
+               lg:order-none lg:w-[200px] mt-6 md:mt-0"
+      >
+        <h6 class="text-[1.25rem] mb-4 whitespace-nowrap font-bold">
+          Technologies
+        </h6>
+        <ul class="space-y-3">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="mt-8 mb-4 border-0 h-[2px] bg-[#d86943] max-w-[1200px] mx-auto"/>
+
+    <!-- Logo -->
+    <div class="max-w-[1200px] mx-auto flex justify-start">
+      <img
+        src="https://codespace-assets.global.ssl.fastly.net/wp/assets/website/codespace-primary-logo-light.svg"
+        alt="CodeSpace Logo"
+        class="h-[40px] bg-[#659f8f] p-1 rounded"
+      />
+    </div>
+  </footer>
+</body>
 </html>
